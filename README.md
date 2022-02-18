@@ -1,10 +1,6 @@
 # Cascadia Burning
 
-This repository contains data and code for [Cascadia Burning: The historic, but not historically unprecedented, 2020 wildfires in the Pacific Northwest, USA]() by Reilly et. al., 2021.
-
-# Data and Code
-
-Most of the data used in the manuscript was generated from raw data in [Google Earth Engine](https://earthengine.google.com/) [[1]](#1) using a combination of the Javascript and Python APIs. Generated data is included where practical, but can otherwise be re-generated using the included scripts.
+This repository contains data and code for [Cascadia Burning: The historic, but not historically unprecedented, 2020 wildfires in the Pacific Northwest, USA]() by Reilly et. al., 2021. Most of the data used in analysis is included here, with the exception of a) unmodified data from external sources that is linked and b) large datasets that can be re-generated from included scripts. 
 
 Scripts and datasets are described below, organized [by filename](#by-file) and [by in-text reference](#by-reference).
 
