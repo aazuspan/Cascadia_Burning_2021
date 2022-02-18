@@ -30,7 +30,6 @@ Scripts and datasets are described below, organized [by filename](#by-file) and 
 - [east_wind.zip](data/east_wind.zip): Dry east wind frequency grid.
 - [ecoregions/](data/ecoregions/): Ecoregions adapted from [EPA Level III Ecoregions](https://www.epa.gov/eco-research/).
 - [fire_stats_data_20210802.csv](data/fire_stats_data_20210802.csv): Area burned by year, ecoregion, severity class, and forest structure.
-- [historical_fire/](data/historical_fire/): Historical fire perimeters from various sources.
 - [LSR/](data/LSR/): Late Successional Reserve boundaries adapted from [here](https://www.fs.fed.us/r6/reo/library/maps.php).
 - [maj_EW_count.tif](data/maj_EW_count.tif): Count of hours exceeding the Cramer major east wind threshold [[4]](#4).
 - [max_wdir.tif](data/max_wdir.tif): A grid of RTMA [[5]](#5) wind gust and direction at the time of the maximum regional gust velocity between September 4 and 13.
@@ -61,7 +60,6 @@ Scripts and datasets are described below, organized [by filename](#by-file) and 
 
 - Data
     - [NIFC fire perimeters](data/NIFC/)
-    - [Historical fire perimeters](data/historical_fire/historical_fires.gpkg)
 
 ### Figure 4
 
@@ -114,19 +112,12 @@ Scripts and datasets are described below, organized [by filename](#by-file) and 
 - Data
     - [Sample plots](data/rdnbr_samples_20210811_v2.csv)
 
-### Figure 10
-
-- Data
-    - [Historical fire perimeters](data/historical_fire/historical_fires.gpkg)
-
 ### Appendix 2
 
 - Scripts
     - [early_seral_area.R](scripts/early_seral_area.R)
 - Data
     - [Ecoregions](data/ecoregions/)
-    - [Henderson fire perimeters](data/historical_fire/henderson_perims_ecoregion_state.shp)
-
 
 ### Appendix 3 and 4
 
@@ -162,8 +153,6 @@ Scripts and datasets are described below, organized [by filename](#by-file) and 
     - [early_seral_area.R](scripts/early_seral_area.R)
 - Data
     - [Ecoregions](data/ecoregions/)
-    - [Historical fire perimeters by ecoregion](data/historical_fire/historical_perims_ecoregion_state.shp)
-
 
 # References
 
