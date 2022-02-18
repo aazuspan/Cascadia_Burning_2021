@@ -37,7 +37,7 @@ Scripts and datasets are described below, organized [by filename](#by-file) and 
 - [NWFP/](data/NWFP/): Northwest forest plan boundary available [here](https://www.fs.fed.us/r6/reo/library/maps.php).
 - [patch_size/](data/patch_size/): Annual fire patch sizes calculated by [patch_size.R](scripts/patch_size.R).
 - [RAWS/](data/RAWS/): RAWS weather data for the 2020 Labor Day fires and the 2017 Eagle Creek Fire.
-- [rdnbr_samples_20210811_v2.csv](data/rdnbr_samples_20210811_v2.csv): Randomly sampled data used for burn severity modeling.
+- [rdnbr_samples.csv](data/rdnbr_samples.csv): Randomly sampled data used for burn severity modeling.
 - [study_area.gpkg](data/study_area.gpkg): The Coast Range, Olympic Peninsula, and Western Cascades ecoregions adapted from [EPA Level III Ecoregions](https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-continental-united-states).
 - [summary_may-oct_gridMET.tif](data/summary_may-oct_gridMET.tif): Magnitude and duration of dry east wind events.
 
@@ -110,7 +110,7 @@ Scripts and datasets are described below, organized [by filename](#by-file) and 
     - [rdnbr_sampling.js](scripts/rdnbr_sampling.js)
     - [rdnbr_analysis.R](scripts/rdnbr_analysis.R)
 - Data
-    - [Sample plots](data/rdnbr_samples_20210811_v2.csv)
+    - [Sample plots](data/rdnbr_samples.csv)
 
 ### Appendix 2
 
