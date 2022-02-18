@@ -1,12 +1,10 @@
-# This just loads historical fire perimeters that were divided by state and ecoregion in Arcmap and calculates some 
-# tabular area stats
+# This script loads historical fire perimeters that were divided by state and ecoregion in Arcmap and calculates some 
+# tabular area stats.
 
 
 library(dplyr)
 
-
 date <- Sys.Date()
-
 data_dir <- file.path("..", "data")
 
 # USFS R6 perimeters pre-1900, identitied with ecoregions and states
@@ -38,7 +36,6 @@ for(state in c("OR", "WA")) {
   for(region in c("Olympic Peninsula", "Western Cascades")) {
     subregion <- ecoregions %>%
       subset(NA_L3NAME == region & STUSPS == state)
-    
     
     for(source in c("Henry Gannett", "F.A. Elliott", "Constance A. Harrington")) {
       if (source == "Henry Gannett")

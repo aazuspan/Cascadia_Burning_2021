@@ -3,12 +3,11 @@ This GEE script calculates the pixel-wise count of cumulative hours spent above 
 major east wind event threshold of > 4 m/s wind speed, < 36% RH, and 15-165 deg. wind direction.
 */
 
-
+// See https://github.com/aazuspan/geeTools
 var fire = require("users/aazuspan/geeTools:fire.js");
 var climate = require("users/aazuspan/geeTools:climate.js");
 
 var rtma = ee.ImageCollection("NOAA/NWS/RTMA");
-
 
 var extent = ee.Geometry.Polygon([
   [-127.95869082399632,38.16635058488577],
@@ -50,7 +49,7 @@ var weather = ee.ImageCollection(periodList.map(function(time) {
   var w = rtma
     .filterDate(imgStart, imgEnd)
     .median()
-    .select(["GUST", "PRES", "TMP", "DPT", "UGRD", "VGRD", "SPFH", "WDIR", "WIND"])
+    .select(["GUST", "PRES", "TMP", "DPT", "UGRD", "VGRD", "SPFH", "WDIR", "WIND"]);
   
   // Calculate relative humidity and add as a band
   var q = w.select("SPFH");
@@ -71,7 +70,7 @@ var weather = ee.ImageCollection(periodList.map(function(time) {
 var gustThreshold = weather.map(function(img) {
   var gust = img.select("GUST");
   var rh = img.select("RH");
-  var wdir = img.select("WDIR")
+  var wdir = img.select("WDIR");
   
   var windMask = ee.Image(0).where(gust.gt(WIND_THRESHOLD), 1);
   var rhMask = ee.Image(0).where(rh.lt(RH_THRESHOLD), 1);
@@ -85,9 +84,7 @@ var gustThreshold = weather.map(function(img) {
 // Cramer threshold
 var countGust = gustThreshold.reduce(ee.Reducer.sum()).uint8();
 
-
-Map.addLayer(countGust, {min: 0, max: 60, palette: ['#2c7bb6', '#ffffbf', '#d7191c']}, "gust")
-
+Map.addLayer(countGust, {min: 0, max: 60, palette: ['#2c7bb6', '#ffffbf', '#d7191c']}, "gust");
 
 Export.image.toDrive({
   image: countGust,
@@ -95,4 +92,4 @@ Export.image.toDrive({
   scale: 2500,
   region: extent,
   crs: "EPSG:5070"
-})
+});

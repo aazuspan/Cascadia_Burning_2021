@@ -21,45 +21,17 @@ var extent = ee.Geometry.Polygon([
 ])
 var scale = 2500;
 
-
 // Get hourly fire masks
-var burned = fire.periodicFireBoundaries(start, end, extent, {timeDelta: timeDelta, smooth: false, cumulative: false})
 var burnedCumulative = fire.periodicFireBoundaries(start, end, extent, {timeDelta: timeDelta, smooth: false, cumulative: true})
 
-// How many times was a given pixel detected as burning during this period?
-var burnCount = burned.reduce(ee.Reducer.sum());
-Map.addLayer(burnCount)
-
-
-// Build an image where each band is an hourly GOES fire mask
-var burnMasks = burned.map(function(mask) {
-    // var imgStart = ee.Date(mask.get("start_date"));
-    var imgEnd = ee.Date(mask.get("end_date"));
-    var dateString = imgEnd.format("yyyy_MM_dd_HH");
-    
-    return mask.rename(dateString);
-}).toBands()
-
-// Build an image where each band is an accumulated GOES fire mask
-var burnMasksCumulative = burned.map(function(mask) {
-    // var imgStart = ee.Date(mask.get("start_date"));
+// Build an image where each band is an hourly accumulated GOES fire mask
+var burnMasksCumulative = burnedCumulative.map(function(mask) {
     var imgEnd = ee.Date(mask.get("end_date"));
     var dateString = imgEnd.format("yyyy_MM_dd_HH");
     
     return mask.rename(dateString);
 }).toBands()
   
-
-
-Export.image.toDrive({
-  image: burnMasks,
-  description: "burn_masks",
-  region: extent,
-  scale: scale,
-  crs: "EPSG:5070",
-  maxPixels: 1e13
-})
-
 Export.image.toDrive({
   image: burnMasksCumulative,
   description: "cumulative_burn_masks",

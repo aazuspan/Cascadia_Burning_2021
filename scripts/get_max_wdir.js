@@ -29,8 +29,7 @@ var maxGusts = ui.Chart.image.series({
 print(maxGusts)
 
 
-// Identified the time with the maximum gusts in the Beachie perimeter
-// using the chart above.
+// Identified the time with the maximum gusts in the study area using the chart above.
 var maxGustTime = ee.Date("2020-09-08T03")
 
 // Get the gust and wind direction during the maximum gust period

@@ -42,18 +42,13 @@ get_high_severity_patch_area <- function(yr) {
   sev_path <- file.path(data_dir, "severity", paste0("severity_", yr, ".tif"))
   sev <- raster::raster(sev_path)
   
-  # # The 2020 severity data came from a different source and the origin doesn't match
-  # if(yr == 2020) {
-  #   aoi_mask <- raster::resample(aoi_mask, sev)
-  # }
-  
   # Severity masked to the AOI. Overwrite the data each time to avoid storing it all in RAM
   sev <- sev * aoi_mask
   
   # High severity only
   sev <- high_severity_mask(sev)
   
-  # 20 seconds. Count total number of high severity pixels. Much faster than getting length of values
+  # Count total number of high severity pixels. Much faster than getting length of values
   freq <- rasterDT::freqDT(sev, useNA="no")
   n_pixels <- freq$freq
   
@@ -63,7 +58,6 @@ get_high_severity_patch_area <- function(yr) {
     yr_patch <- data.frame(id=0, metric="area", value=0)
   }
   else {
-    # 1.17 minutes
     yr_patch <- landscapemetrics::lsm_p_area(sev, directions=8)
   }
   

@@ -18,7 +18,7 @@ var extent = ee.Geometry.Polygon([
     [-116.34215718032829,49.62802378354546],
     [-127.95869082399632,49.62802378354546],
     [-127.95869082399632,38.16635058488577],
-  ])
+  ]);
 
 
 // Build medoid composite for every year 1984-2020.
@@ -43,9 +43,9 @@ for (var yr = 1985; yr < 2021; yr++) {
   var postfire = ee.Image(indexCollection.filterDate(postfireStart, postfireEnd).first());
   
   // Calculate delta normalized burn ratio between prefire and postfire
-  var dnbr = prefire.subtract(postfire)
+  var dnbr = prefire.subtract(postfire);
   // Calculate relativized delta normalized burn ratio following Miller & Thode 2007
-  var rdnbr = dnbr.divide(prefire.divide(1000).abs().pow(0.5))
+  var rdnbr = dnbr.divide(prefire.divide(1000).abs().pow(0.5));
   // Remap RdNBR into fire severity classes using thresholds from Matt Reilly. 0 = nodata
   var severity = ee.Image(0)
             .where(rdnbr.lte(166.4848), 1) // very low or unchanged
@@ -53,7 +53,7 @@ for (var yr = 1985; yr < 2021; yr++) {
             .where(rdnbr.gt(235.195).and(rdnbr.lte(406.48)), 3) // low / moderate
             .where(rdnbr.gt(406.48).and(rdnbr.lte(648.725)), 4) // moderate
             .where(rdnbr.gt(648.725).and(rdnbr.lte(828.1328)), 5) // high
-            .where(rdnbr.gt(828.1328), 6) // very high
+            .where(rdnbr.gt(828.1328), 6); // very high
   
   if (yr <= 2018) {
     // MTBS only covers 1984 to 2018
@@ -78,5 +78,5 @@ for (var yr = 1985; yr < 2021; yr++) {
     crs: "EPSG:5070",
     scale: 30,
     maxPixels: 1e12
-  })
+  });
 }
