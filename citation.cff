@@ -1,0 +1,57 @@
+cff-version: 1.0.0
+type: article
+message: "If you reference this paper or use code or data included here, please cite as below."
+authors:
+- family-names: Reilly
+  given-names: Matthew J.
+- family-names: Zuspan
+  given-names: Aaron
+  orcid: 0000-0003-1583-3710
+- family-names: Halofsky
+  given-names: Joshua S.
+  orcid: 0000-0003-4120-7457
+- family-names: Crystal
+  given-names: Raymond
+  orcid: 0000-0002-2171-3486
+- family-names: McEvoy
+  given-names: Andy
+  orcid: 0000-0002-4152-6776
+- family-names: Dye
+  given-names: Alex W.
+  orcid: 0000-0003-3469-5608
+- family-names: Donato
+  given-names: Daniel C.
+- family-names: Kim
+  given-names: John B.
+- family-names: Potter
+  given-names: Brian E.
+- family-names: Walker
+  given-names: Nathan
+- family-names: Davis
+  given-names: Raymond
+- family-names: Dunn
+  given-names: Christopher J.
+- family-names: Bell
+  given-names: David M.
+- family-names: Gregory
+  given-names: Matthew J.
+- family-names: Johnston
+  given-names: James D.
+- family-names: Harvey
+  given-names: Brian J.
+  orcid: 0000-0002-5902-4862
+- family-names: Halofsky
+  given-names: Jessica E.
+  orcid: 0000-0002-1502-4895
+- family-names: Kerns
+  given-names: Becky K.
+  orcid: 0000-0003-4613-2191
+title: "Cascadia Burning: The historic, but not historically unprecedented, 2020 wildfires in the Pacific Northwest, USA"
+doi: "0"
+journal: "Ecosphere"
+month: 0
+start: 0 # First page number
+end: 0 # Last page number
+issue: 0
+volume: 0
+year: 2021
