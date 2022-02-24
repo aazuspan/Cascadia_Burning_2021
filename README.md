@@ -1,4 +1,5 @@
 # Cascadia Burning
+[![DOI](https://zenodo.org/badge/460669424.svg)](https://zenodo.org/badge/latestdoi/460669424)
 
 This repository contains data and code for [Cascadia Burning: The historic, but not historically unprecedented, 2020 wildfires in the Pacific Northwest, USA]() by Reilly et. al., 2021. Most of the data used in analysis is included here, with the exception of a) unmodified data from external sources that is linked and b) large datasets that can be re-generated from included scripts. 
 
